@@ -4,6 +4,8 @@ import cn.stpan.design.entity.Card;
 import cn.stpan.design.service.CardHistoryService;
 import cn.stpan.design.service.CardService;
 import com.alibaba.fastjson.JSON;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping("card")
 public class CardController {
-
+    private static Logger logger = LogManager.getLogger();
     @Autowired
     private CardService cardService;
     @Autowired
@@ -31,7 +33,6 @@ public class CardController {
     @ResponseBody
     public String login(){
         List<Card> list = cardService.getAllCard();
-        cardHistoryService.getAllCardHistory();
         return JSON.toJSONString(list);
     }
 
@@ -41,6 +42,9 @@ public class CardController {
         HashMap<String,Object> map = new HashMap<String, Object>();
         map.put("name","stpan");
         map.put("age","28");
+        logger.debug("hello1");
+        logger.info("hello2");
+        logger.error("hello3");
         return map;
     }
 

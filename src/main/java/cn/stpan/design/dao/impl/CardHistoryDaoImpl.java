@@ -21,7 +21,7 @@ public class CardHistoryDaoImpl implements CardHistoryDao {
     SessionFactory sessionFactory;
 
     public List<CardHistory> getAllCardHistory() {
-        CardHistory history1 = new CardHistory();
+        /*CardHistory history1 = new CardHistory();
         CardHistory history2 = new CardHistory();
         CardHistory history3 = new CardHistory();
         history1.setId(30);
@@ -30,7 +30,7 @@ public class CardHistoryDaoImpl implements CardHistoryDao {
         Session session = sessionFactory.getCurrentSession();
         session.save(history1);
         session.save(history2);
-        session.save(history3);
+        session.save(history3);*/
         return null;
     }
 }
