@@ -14,7 +14,6 @@
     <title>Title</title>
     <script>
         $(function () {
-            console.log("hello world!");
             $(".go").click(function () {
                 var iFrame = $("#frame-right",window.parent.document);
                 iFrame.attr("src","https://www.so.com");
